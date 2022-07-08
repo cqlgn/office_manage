@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+   <div class="col-12">
+            <!-- /.card -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">员工福利</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                      <th>日期</th>
+                      <th>小类别</th>
+                      <th>明细</th>
+                      <th>金额</th>
+                      <th>发票类型</th>
+                  </tr>
+                  </thead>
+                  {% for message in objs %}
+                      <tr>
+                          <td>{{ message.日期 }}</td>
+                          <td>{{ message.小类别 }}</td>
+                          <td>{{ message.明细 }}</td>
+                          <td>{{ message.金额 }}</td>
+                          <td>{{ message.发票类型 }}</td>
+                      </tr>
+                  {% endfor %}
+                  </thead>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+
+{% endblock content %}
