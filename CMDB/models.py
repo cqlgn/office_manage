@@ -35,3 +35,18 @@ class cmdb(models.Model):
     def __str__(self):
         return f"{self.id}"
 
+class fine(models.Model):
+    日期 = models.DateField(null=True, blank=True)
+    明细 = models.TextField()
+    金额 = models.FloatField()
+
+    def __str__(self):
+        return f"{self.id}"
+
+class back_money(models.Model):
+    日期 = models.DateField(null=True, blank=True)
+    入账 = models.FloatField()
+    def __str__(self):
+        return f"{self.id}"
+
+

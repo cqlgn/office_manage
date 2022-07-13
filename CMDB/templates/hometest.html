@@ -4,15 +4,83 @@
             <!-- /.card -->
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">报销_日常办公</h3>
+                <h3 class="card-title">万通备用金</h3>
               </div>
+              <div class="container-fluid">
+                      <!-- Info boxes -->
+                      <div class="row">
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="info-box">
+                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-flag"></i></span>
+
+                            <div class="info-box-content">
+                              <span class="info-box-text">初始金额</span>
+                              <span class="info-box-number">{{ summary }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                          </div>
+                          <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="info-box mb-3">
+                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-star"></i></span>
+
+                            <div class="info-box-content">
+                              <span class="info-box-text">消费</span>
+                              <span class="info-box-number">{{ use }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                          </div>
+                          <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+
+                        <!-- fix for small devices only -->
+                        <div class="clearfix hidden-md-up"></div>
+
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="info-box mb-3">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+                            <div class="info-box-content">
+                              <span class="info-box-text">余额</span>
+                              <span class="info-box-number">{{ remain }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                          </div>
+                          <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="info-box mb-3">
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+                            <div class="info-box-content">
+                              <span class="info-box-text">罚款</span>
+                              <span class="info-box-number">{{ penalty }}</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                          </div>
+                          <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+
+                    </div><!--/. container-fluid -->
+               <div id="data_img_1">
+                            <iframe frameborder=0 src="statistic" width="100%" height="450"></iframe>
+               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                       <th>日期</th>
+                      <th>月份</th>
                       <th>小类别</th>
+                      <th>购买渠道</th>
                       <th>明细</th>
                       <th>金额</th>
                       <th>发票类型</th>
@@ -21,7 +89,9 @@
                   {% for message in objs %}
                       <tr>
                           <td>{{ message.日期 }}</td>
+                          <td>{{ message.月份 }}</td>
                           <td>{{ message.小类别 }}</td>
+                          <td>{{ message.购买渠道 }}</td>
                           <td>{{ message.明细 }}</td>
                           <td>{{ message.金额 }}</td>
                           <td>{{ message.发票类型 }}</td>

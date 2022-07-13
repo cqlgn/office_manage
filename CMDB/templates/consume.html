@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+<script src="/static/admin/js/nav_sidebar.js" defer></script>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+<script src="/admin/jsi18n/"></script>
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/calendar.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+<body class=" app-CMDB model-cmdb change-form"
+  data-admin-utc-offset="28800">
+
+<!-- Container -->
+<div id="container">
+  <div class="col-md-7" style="margin:auto;">
+      <div class="content">
+        <!-- Content -->
+        <div id="content" class="colM">
+
+          <h1 style=color:white>消费明细</h1>
+
+          <div id="content-main">
+
+<form method="post" id="cmdb_form" ><input type="hidden" name="csrfmiddlewaretoken" value="LbLcP7BhNk4GgOTwNnehHi9gSMuZsN0pOaAlwgSiLbnPwiTGWJYYOW0xerBcEQFB">
+<div>
+
+    <div class="form field-日期">
+            <div>
+                    <label for="id_日期" style=color:white>日期:</label>
+                        <span style="color:red">*</span>
+
+                        <input type="text" name="日期" class="vDateField" size="10" id="id_日期" required/>
+            </div>
+    </div>
+
+    <div class="form field-月份">
+            <div>
+                    <label for="id_月份" style=color:white>月份:</label>
+                        <span style="color:red">*</span>
+                        <input type="number" name="月份" class="vIntegerField" id="id_月份">
+            </div>
+    </div>
+
+    <div class="form field-花费地">
+            <div>
+                    <label for="id_花费地" style=color:white>花费地:</label>
+                        <input type="text" name="花费地" class="vTextField" maxlength="255" id="id_花费地">
+            </div>
+
+    </div>
+
+    <div class="form field-小类别">
+            <div>
+                    <label for="id_小类别" style=color:white>小类别:</label>
+                        <span style="color:red">*</span>
+                        <select name="小类别" id="id_小类别">
+                          <option value="" selected>---------</option>
+                          <option value="名片印制">名片印制</option>
+                          <option value="日常办公">日常办公</option>
+                          <option value="员工福利">员工福利</option>
+                        </select>
+            </div>
+    </div>
+
+    <div class="form field-购买渠道">
+            <div>
+                    <label for="id_购买渠道" style=color:white>购买渠道:</label>
+                    <span style="color:red">*</span>
+
+                        <select name="购买渠道" id="id_购买渠道">
+                          <option value="" selected>---------</option>
+                          <option value="京东">京东</option>
+                          <option value="淘宝">淘宝</option>
+                          <option value="拼多多">拼多多</option>
+                          <option value="闪送">闪送</option>
+                        </select>
+            </div>
+    </div>
+    <div class="form field-明细">
+            <div>
+                    <label class="required" for="id_明细" style=color:white>明细:</label>
+                        <span style="color:red">*</span>
+                        <textarea name="明细" cols="40" rows="1" class="vTextField" required id="id_明细">
+                        </textarea>
+            </div>
+    </div>
+    <div class="form field-金额">
+            <div>
+                    <label class="required" for="id_金额" style=color:white>金额:</label>
+                    <span style="color:red">*</span>
+                        <input type="number" name="金额" step="any" required id="id_金额">
+            </div>
+    </div>
+    <div class="form field-发票类型">
+            <div>
+                    <label for="id_发票类型" style=color:white>发票类型:</label>
+                    <span style="color:red">*</span>
+                        <select name="发票类型" id="id_发票类型">
+                          <option value="" selected>---------</option>
+                          <option value="截图">截图</option>
+                          <option value="发票">发票</option>
+                          <option value="截图+发票">截图+发票</option>
+                        </select>
+            </div>
+    </div>
+    <div class="form field-报销申请">
+            <div>
+                    <label for="id_报销申请" style=color:white>报销申请:</label>
+                        <select name="报销申请" id="id_报销申请">
+                          <option value="" selected>---------</option>
+                          <option value="yes">是</option>
+                          <option value="no">否</option>
+                        </select>
+            </div>
+    </div>
+    <div class="form field-财务打款">
+            <div>
+                    <label for="id_财务打款" style=color:white>财务打款:</label>
+                        <select name="财务打款" id="id_财务打款">
+                          <option value="" selected>---------</option>
+                          <option value="yes">是</option>
+                          <option value="no">否</option>
+                        </select>
+            </div>
+    </div>
+    <div class="submit">
+     <input type="submit" value="保存" class="default" name="_save">
+    </div>
+
+<script id="django-admin-form-add-constants"
+            src="/static/admin/js/change_form.js"
+            data-model-name="cmdb"
+            async>
+    </script>
+<script id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+</script>
+
+</div>
+</form>
+          </div>
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+{% endblock content %}

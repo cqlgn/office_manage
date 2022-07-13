@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+<script src="/static/admin/js/nav_sidebar.js" defer></script>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+<script src="/admin/jsi18n/"></script>
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/calendar.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+<body class=" app-CMDB model-cmdb change-form"
+  data-admin-utc-offset="28800">
+
+<!-- Container -->
+<div id="container">
+<div>
+      <div class="content">
+        <!-- Content -->
+        <div id="content" class="colM">
+
+          <h1 style=color:white>备用金</h1>
+
+          <div id="content-main">
+
+<form method="post" id="cmdb_form" ><input type="hidden" name="csrfmiddlewaretoken" value="cp6YGrnzgpOJRGUVkBrUEDxENNXqksUqfoV7nAEAeg7S7aU5tXbBLhoV9s4DwvzC">
+<div class="col-md-5" style="margin:auto;">
+
+    <div class="form field-日期">
+            <div>
+                    <label for="id_日期" style=color:white>日期:</label>
+                    <span style="color:red">*</span>
+                        <input type="text" name="日期" class="vDateField" size="10" id="id_日期">
+            </div>
+    </div>
+    <div class="form field-入账">
+            <div>
+                    <label class="required" for="id_入账" style=color:white>入账:</label>
+                    <span style="color:red">*</span>
+                        <input type="number" name="入账" step="any" required id="id_入账">
+            </div>
+    </div>
+    <div class="submit">
+    <input type="submit" value="保存" class="default" name="_save">
+    </div>
+
+
+<script id="django-admin-form-add-constants"
+        src="/static/admin/js/change_form.js"
+
+            data-model-name="cmdb"
+
+        async>
+</script>
+
+<script id="django-admin-prepopulated-fields-constants"
+        src="/static/admin/js/prepopulate_init.js"
+        data-prepopulated-fields="[]">
+</script>
+
+</div>
+</form></div>
+
+
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+
+
+{% endblock content %}

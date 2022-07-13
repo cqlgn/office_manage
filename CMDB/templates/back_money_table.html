@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+   <div class="col-12">
+            <!-- /.card -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">备用金</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                      <th>日期</th>
+                      <th>入账</th>
+                  </tr>
+                  </thead>
+                  {% for message in back_money_table %}
+                      <tr>
+                          <td>{{ message.日期 }}</td>
+                          <td>{{ message.入账 }}</td>
+                      </tr>
+                  {% endfor %}
+                  </thead>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+
+{% endblock content %}
